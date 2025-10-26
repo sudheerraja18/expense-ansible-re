@@ -23,11 +23,11 @@
 
   - name: connect to mysql server
     community.mysql.mysql_info:
-      login_user: ec2_user
+      login_user: root
       login_password: ExpenseApp@1
       login_host: db.harvargurram.online
     register: mysql_info
-    ignore_errors: True
+    ignore_errors: true
   
   - name: print the output
     ansible.builtin.debug:
