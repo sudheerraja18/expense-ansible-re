@@ -12,3 +12,15 @@
       name: mysqld
       state: started
       enabled: yes
+
+  - name: connect to mysql server
+    community.mysql.mysql_info:
+      login_user: ec2_user
+      login_password: ExpenseApp@1
+      login_host: db.harvargurram.online
+    register: mysql_info
+  
+  - name: print the output
+    ansible.builtin.debug:
+      msg: "{{ mysql_info }}"
+
